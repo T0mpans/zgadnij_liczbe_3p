@@ -11,7 +11,7 @@ public class Main {
         short liczba2 = 300;
         int liczba3 = 13452352;
         long liczba4 = 417264982;
-        System.out.println("Liczba całkowita "+liczba4);
+        //System.out.println("Liczba całkowita "+liczba4);
         //typy zmiennoprzecinkowe
         float liczba5 = 12.546f;
         double liczba6 = 12341234.1234134;
@@ -24,7 +24,7 @@ public class Main {
         //losowanie liczby
 
         int wylosowanaLiczba = (int)(Math.random()*100+1); //rzutowanie typów
-        System.out.println("Wylosowana liczba: "+wylosowanaLiczba);
+        //System.out.println("Wylosowana liczba: "+wylosowanaLiczba);
         //wylosowanie liczby z klawiatury
         Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj liczbę: ");
@@ -47,6 +47,29 @@ public class Main {
         //wyrażenie warunkowe -> zwraca wartość
     roznica = wpisanaLiczba>wylosowanaLiczba?wpisanaLiczba - wylosowanaLiczba:wylosowanaLiczba - wpisanaLiczba;
 
-        System.out.println(roznica);
+        System.out.println("Różnica: "+roznica);
+        roznica = roznica / 10; //bo dzielimy dwie całkowite
+
+//        switch (roznica){
+//            case 0:
+//                System.out.println("Prawie się udało lub trafione");
+//                break;
+//            case 1:
+//                System.out.println("Blisko");
+//                break;
+//            case 2:
+//                System.out.println("nie najgorzej");
+//                break;
+//            default:
+//                System.out.println("Spróbuj innym razem");
+//        }
+        System.out.println(
+                switch (roznica){
+                    case 0->"Prawie się udało lub trafione";
+                    case 1->"Blisko";
+                    case 2->"Nienajgorzej";
+                    default -> "spróbuj innym razem";
+                }
+        );
     }
 }
