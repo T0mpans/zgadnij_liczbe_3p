@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -27,9 +28,9 @@ public class Main {
         //System.out.println("Wylosowana liczba: "+wylosowanaLiczba);
         //wylosowanie liczby z klawiatury
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Podaj liczbę: ");
+//        System.out.println("Podaj liczbę: ");
         int wpisanaLiczba = scanner.nextInt();
-        System.out.println("Wpisano: "+wpisanaLiczba);
+//        System.out.println("Wpisano: "+wpisanaLiczba);
 
         //instrukcja warunkowa
         if(wpisanaLiczba == wylosowanaLiczba){
@@ -45,9 +46,9 @@ public class Main {
             roznica = wpisanaLiczba - wylosowanaLiczba;
         }
         //wyrażenie warunkowe -> zwraca wartość
-    roznica = wpisanaLiczba>wylosowanaLiczba?wpisanaLiczba - wylosowanaLiczba:wylosowanaLiczba - wpisanaLiczba;
-
-        System.out.println("Różnica: "+roznica);
+//    roznica = wpisanaLiczba>wylosowanaLiczba?wpisanaLiczba - wylosowanaLiczba:wylosowanaLiczba - wpisanaLiczba;
+//
+//        System.out.println("Różnica: "+roznica);
         roznica = roznica / 10; //bo dzielimy dwie całkowite
 
 //        switch (roznica){
@@ -63,13 +64,30 @@ public class Main {
 //            default:
 //                System.out.println("Spróbuj innym razem");
 //        }
-        System.out.println(
-                switch (roznica){
-                    case 0->"Prawie się udało lub trafione";
-                    case 1->"Blisko";
-                    case 2->"Nienajgorzej";
-                    default -> "spróbuj innym razem";
-                }
-        );
+//        System.out.println(
+//                switch (roznica){
+//                    case 0->"Prawie się udało lub trafione";
+//                    case 1->"Blisko";
+//                    case 2->"Nienajgorzej";
+//                    default -> "spróbuj innym razem";
+//                }
+//        );
+        //zgadujemy więcej razy np.10
+        //losowanie liczby 2 sposób
+        Random random = new Random();
+        int wylosowanaWartosc = random.nextInt(1, 101);
+        //pętla for
+        for (int i = 0; i <= 10; i++) {
+            System.out.println("Podaj liczbę: ");
+            wpisanaLiczba = scanner.nextInt();
+            if (wpisanaLiczba == wylosowanaWartosc){
+                System.out.println("Brawo");
+                break;
+            } else if (wpisanaLiczba>wylosowanaWartosc) {
+                System.out.println("Wpisałeś za dużo");
+            } else {
+                System.out.println("Wpisałeś za mało");
+            }
+        }
     }
 }
