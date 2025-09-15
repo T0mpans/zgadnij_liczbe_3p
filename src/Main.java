@@ -30,5 +30,23 @@ public class Main {
         System.out.println("Podaj liczbę: ");
         int wpisanaLiczba = scanner.nextInt();
         System.out.println("Wpisano: "+wpisanaLiczba);
+
+        //instrukcja warunkowa
+        if(wpisanaLiczba == wylosowanaLiczba){
+            System.out.println("Brawo, trafione");
+        }else{
+            System.out.println("Pudło");
+        }
+
+        int roznica;
+        if(wylosowanaLiczba>wpisanaLiczba){
+            roznica = wylosowanaLiczba - wpisanaLiczba;
+        }else{
+            roznica = wpisanaLiczba - wylosowanaLiczba;
+        }
+        //wyrażenie warunkowe -> zwraca wartość
+    roznica = wpisanaLiczba>wylosowanaLiczba?wpisanaLiczba - wylosowanaLiczba:wylosowanaLiczba - wpisanaLiczba;
+
+        System.out.println(roznica);
     }
 }
